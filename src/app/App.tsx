@@ -95,7 +95,7 @@ export default function App() {
   if (currentScreen === 'cover') {
     return (
       <div className="size-full flex items-center justify-center bg-[#F5F5F5]" style={{ fontFamily: 'Inter, sans-serif' }}>
-        <div className="w-full max-w-[393px] h-full bg-[#ffffff] flex flex-col items-center justify-between px-6 py-6">
+           <div style={{ width: '100%', maxWidth: '393px', height: '100svh', backgroundColor: '#ffffff', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-between', padding: '48px 24px 40px' }}>
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -207,6 +207,12 @@ export default function App() {
     return (
       <div className="size-full flex items-center justify-center bg-[#F5F5F5]" style={{ fontFamily: 'Inter, sans-serif' }}>
         <div className="w-full max-w-[393px] h-full bg-[#FAFAF9] flex flex-col px-6 py-8 overflow-y-auto">
+          <button
+            onClick={() => setCurrentScreen('cover')}
+            className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-black/5 transition-colors mb-2"
+          >
+            <ArrowLeft className="w-5 h-5 text-[#0F0F0F]" />
+          </button>
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -1023,22 +1029,22 @@ export default function App() {
             {/* SECTION 5: Style Reference Section */}
             {(() => {
               const styleHashtags: Record<string, string[]> = {
-                gg: ['#화이트셔츠', '#크림팬츠', '#미니멀룩', '#로퍼', '#클린걸', '#누드톤'],
-                gy: ['#미니원피스', '#리본디테일', '#발레코어', '#메리제인', '#걸리시룩', '#파스텔톤'],
-                gr: ['#블라우스', '#캐주얼룩', '#미니멀주얼리', '#뮤트톤', '#페미닌룩', '#운동화'],
-                gb: ['#블라우스', '#와이드팬츠', '#캡모자', '#스니커즈', '#꾸안꾸', '#캐주얼룩'],
+                gg: ['#화이트셔츠', '#크림팬츠', '#미니멀코어', '#로퍼', '#클린핏', '#누드톤'],
+                gy: ['#크림원피스', '#리본헤어', '#발레코어', '#메리제인', '#걸리시룩', '#파스텔톤'],
+                gr: ['#핑크블라우스', '#올드머니', '#골드주얼리', '#뮤트톤', '#페미닌코어', '#힐'],
+                gb: ['#오버핏셔츠', '#와이드데님', '#캡모자', '#스니커즈', '#꾸안꾸', '#캐주얼힙'],
                 yg: ['#핑크니트', '#플레어스커트', '#러블리코어', '#발레리나플랫', '#파스텔톤', '#소녀감성'],
-                yy: ['#레이스디테일', '#리본디테일', '#파스텔톤', '#귀여운백', '#메리제인', '#러블리룩'],
-                yr: ['#미니원피스', '#로맨틱룩', '#미니멀주얼리', '#핑크립', '#메리제인', '#딱붙티'],
-                yb: ['#블라우스', '#와이드팬츠', '#Y2K', '#깔끔한단화', '#데님믹스', '#스트릿큐티'],
-                rg: ['#딱붙티', '#캐주얼룩', '#미니멀주얼리', '#뮤트톤', '#클린걸', '#오프숄더'],
-                ry: ['#새틴스커트', '#리본디테일', '#로맨틱룩', '#볼드이어링', '#핑크톤', '#오프숄더'],
-                rr: ['#비비드컬러', '#볼드액세서리', '#딱붙티', '#부츠컷팬츠', '#강한립', '#오프숄더'],
-                rb: ['#가죽재킷', '#와이드팬츠', '#실버액세서리', '#딥컬러', '#딱붙티', '#부츠'],
-                bg: ['#뮤트톤', '#와이드팬츠', '#꾸안꾸', '#로퍼', '#미니멀힙', '#캐주얼룩'],
-                by: ['#크롭티', '#와이드팬츠', '#리본디테일', '#Y2K', '#운동화', '#그래픽티'],
-                br: ['#딥컬러', '#레이어드룩', '#실버액세서리', '#다크한톤', '#시크한무드', '#부츠'],
-                bb: ['#오버핏아우터', '#스포티룩', '#스트릿패션', '#볼드벨트', '#빈티지룩', '#운동화'],
+                yy: ['#파스텔원피스', '#리본디테일', '#파스텔코어', '#귀여운백', '#메리제인', '#러블리룩'],
+                yr: ['#코랄원피스', '#로맨틱코어', '#볼드이어링', '#핑크립', '#힐', '#글램큐티'],
+                yb: ['#그래픽티', '#와이드팬츠', '#Y2K코어', '#청키스니커즈', '#데님믹스', '#스트릿큐티'],
+                rg: ['#라인원피스', '#올드머니', '#미니멀주얼', '#뮤트핑크', '#클린글램', '#힐'],
+                ry: ['#새틴원피스', '#리본디테일', '#로맨틱글램', '#볼드이어링', '#핑크톤', '#힐'],
+                rr: ['#비비드컬러', '#볼드액세서리', '#글램코어', '#하이힐', '#강한립', '#맥시멀룩'],
+                rb: ['#가죽재킷', '#와이드팬츠', '#실버액세서리', '#딥컬러', '#힙글램', '#앵클부츠'],
+                bg: ['#베이지셔츠', '#배럴팬츠', '#꾸안꾸', '#로퍼', '#미니멀힙', '#캐주얼코어'],
+                by: ['#크롭티', '#와이드팬츠', '#파스텔백', '#Y2K코어', '#청키스니커즈', '#힙큐티'],
+                br: ['#딥컬러', '#레이어드룩', '#실버액세서리', '#다크코어', '#시크코어', '#앵클부츠'],
+                bb: ['#오버핏아우터', '#빈티지데님', '#스트릿코어', '#볼드벨트', '#빈티지코어', '#청키슈즈'],
               };
               const tags = styleHashtags[comboKey] || [];
               return (
@@ -1107,26 +1113,14 @@ export default function App() {
                 </div>
               );
             })()}
-
-            {/* SECTION 7: Bottom CTA */}
+{/* SECTION 7: Bottom CTA */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginTop: '24px' }}>
               <button
                 onClick={() => {
                   setAnswers([]);
                   setCurrentScreen('cover');
                 }}
-                style={{
-                  width: '100%',
-                  backgroundColor: '#0F0F0F',
-                  color: 'white',
-                  fontWeight: '600',
-                  padding: '17px',
-                  borderRadius: '24px',
-                  border: 'none',
-                  cursor: 'pointer',
-                  fontSize: '15px',
-                  boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
-                }}
+                style={{ width: '100%', backgroundColor: '#0F0F0F', color: 'white', fontWeight: '600', padding: '17px', borderRadius: '24px', border: 'none', cursor: 'pointer', fontSize: '15px', boxShadow: '0 2px 8px rgba(0,0,0,0.1)' }}
               >
                 다시 테스트하기
               </button>
@@ -1136,30 +1130,135 @@ export default function App() {
                   if (navigator.share) {
                     navigator.share({
                       title: '나의 추구미 테스트',
-                      text: `내 결과: ${main.name} 메인 + ${sub.name} 서브\n${comboDesc}`,
-                      url: window.location.href,
-                    }).catch(() => {
-                      // 사용자가 공유 취소한 경우 무시
-                    });
+                      text: `내 결과: ${main.name} 메인 + ${sub.name} 서브\n${comboDesc}\n\n내 추구미가 궁금하면 테스트해봐 →`,
+                      url: 'https://my-aesthetic-test.vercel.app/',
+                    }).catch(() => {});
                   } else {
-                    // Web Share API 미지원 브라우저
-                    alert('이 브라우저는 공유 기능을 지원하지 않습니다.');
+                    navigator.clipboard?.writeText('https://my-aesthetic-test.vercel.app/').catch(() => {});
+                    alert('링크가 복사되었습니다!');
                   }
                 }}
-                style={{
-                  width: '100%',
-                  backgroundColor: 'white',
-                  color: '#0F0F0F',
-                  fontWeight: '600',
-                  padding: '17px',
-                  borderRadius: '24px',
-                  border: '1.5px solid #ECECEC',
-                  cursor: 'pointer',
-                  fontSize: '15px',
-                  boxShadow: '0 2px 8px rgba(0,0,0,0.04)',
-                }}
+                style={{ width: '100%', backgroundColor: 'white', color: '#0F0F0F', fontWeight: '600', padding: '17px', borderRadius: '24px', border: '1.5px solid #ECECEC', cursor: 'pointer', fontSize: '15px', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}
               >
                 결과 공유하기 💬
+              </button>
+
+              <button
+                onClick={async () => {
+                  const canvas = await buildCanvas();
+                  const link = document.createElement('a');
+                  link.download = `추구미_${main.name}_${sub.name}.png`;
+                  link.href = canvas.toDataURL('image/png');
+                  link.click();
+
+                  async function buildCanvas() {
+                    const W = 800, H = 1300;
+                    const canvas = document.createElement('canvas');
+                    canvas.width = W; canvas.height = H;
+                    const ctx = canvas.getContext('2d')!;
+                    const grad = ctx.createLinearGradient(0, 0, W, H);
+                    grad.addColorStop(0, main.lightBg);
+                    grad.addColorStop(1, sub.lightBg);
+                    ctx.fillStyle = grad;
+                    ctx.roundRect(0, 0, W, H, 40);
+                    ctx.fill();
+                    const loadImg = (url: string): Promise<HTMLImageElement | null> =>
+                      new Promise((res) => { const img = new Image(); img.crossOrigin = 'anonymous'; img.onload = () => res(img); img.onerror = () => res(null); img.src = url; });
+                    const styleImagesMap: Record<string, string> = {
+                      gg: 'https://i.imgur.com/w1CEkvB.png', gy: 'https://i.imgur.com/nhroWDk.jpeg', gr: 'https://i.imgur.com/qFCOJP5.png', gb: 'https://i.imgur.com/msDSHuL.jpeg',
+                      yg: 'https://i.imgur.com/OQSxCCx.png', yy: 'https://i.imgur.com/AZNVulQ.jpeg', yr: 'https://i.imgur.com/buN26XX.jpeg', yb: 'https://i.imgur.com/sjwo58J.png',
+                      rg: 'https://i.imgur.com/xAB185P.jpeg', ry: 'https://i.imgur.com/sRBNPWD.png', rr: 'https://i.imgur.com/64zyuxz.jpeg', rb: 'https://i.imgur.com/U2179O8.jpeg',
+                      bg: 'https://i.imgur.com/bbge4a1.jpeg', by: 'https://i.imgur.com/xB3zuvJ.jpeg', br: 'https://i.imgur.com/fEA1Qpn.jpeg', bb: 'https://i.imgur.com/7XuAhmn.png',
+                    };
+                    const hashtagsMap: Record<string, string[]> = {
+                      gg: ['#화이트셔츠','#크림팬츠','#미니멀룩','#클린걸'], gy: ['#미니원피스','#리본디테일','#발레코어','#파스텔톤'],
+                      gr: ['#블라우스','#페미닌룩','#미니멀주얼리','#뮤트톤'], gb: ['#블라우스','#와이드팬츠','#꾸안꾸','#캐주얼룩'],
+                      yg: ['#핑크니트','#플레어스커트','#러블리코어','#소녀감성'], yy: ['#레이스디테일','#파스텔톤','#귀여운백','#러블리룩'],
+                      yr: ['#미니원피스','#로맨틱룩','#핑크립','#메리제인'], yb: ['#블라우스','#와이드팬츠','#Y2K','#스트릿큐티'],
+                      rg: ['#딱붙티','#캐주얼룩','#미니멀주얼리','#오프숄더'], ry: ['#새틴스커트','#로맨틱룩','#볼드이어링','#오프숄더'],
+                      rr: ['#비비드컬러','#딱붙티','#부츠컷팬츠','#오프숄더'], rb: ['#가죽재킷','#와이드팬츠','#딥컬러','#부츠'],
+                      bg: ['#뮤트톤','#와이드팬츠','#꾸안꾸','#캐주얼룩'], by: ['#크롭티','#Y2K','#운동화','#그래픽티'],
+                      br: ['#딥컬러','#레이어드룩','#다크한톤','#부츠'], bb: ['#오버핏아우터','#스포티룩','#빈티지룩','#운동화'],
+                    };
+                    const celebData = celebImages[comboKey]?.[0];
+                    const [celebEl, styleEl] = await Promise.all([
+                      celebData ? loadImg(celebData.image) : Promise.resolve(null),
+                      styleImagesMap[comboKey] ? loadImg(styleImagesMap[comboKey]) : Promise.resolve(null),
+                    ]);
+                    ctx.textAlign = 'center';
+                   ctx.fillStyle = 'rgba(255,255,255,0.6)';
+                    ctx.beginPath(); ctx.roundRect(40, 30, W - 80, 250, 24); ctx.fill();
+                    ctx.fillStyle = 'rgba(0,0,0,0.3)'; ctx.font = '500 19px Arial';
+                    ctx.fillText('나의 선택 결과', W/2, 68);
+                    ctx.fillStyle = '#0F0F0F'; ctx.font = 'bold 36px Arial';
+                    ctx.fillText(`${main.emoji} ${main.name}(메인) + ${sub.emoji} ${sub.name}(서브)`, W/2, 118);
+                    ctx.fillStyle = 'rgba(0,0,0,0.55)'; ctx.font = '400 22px Arial';
+                    ctx.fillText(comboDesc, W/2, 155);
+                    const chipW = 160, chipH = 44, chipGap = 12;
+                    const totalChipW = counts.length * chipW + (counts.length - 1) * chipGap;
+                    let chipX = (W - totalChipW) / 2;
+                    counts.forEach((c: any) => {
+                      ctx.fillStyle = 'rgba(255,255,255,0.9)';
+                      ctx.beginPath(); ctx.roundRect(chipX, 182, chipW, chipH, chipH/2); ctx.fill();
+                      ctx.textAlign = 'left'; ctx.fillStyle = '#1A1A1A'; ctx.font = '500 19px Arial';
+                      ctx.fillText(`${typeData[c.color].emoji} ${typeData[c.color].name}`, chipX + 14, 182 + 28);
+                      ctx.font = '700 20px Arial';
+                      ctx.fillText(`${c.count}`, chipX + chipW - 28, 182 + 28);
+                      chipX += chipW + chipGap;
+                    });
+                    ctx.textAlign = 'center';
+                    const imgY = 255, imgW = 330, imgH = 440;
+                    const rightX = 40 + imgW + (W - 80 - imgW * 2);
+                    ctx.fillStyle = 'rgba(255,255,255,0.5)';
+                    ctx.beginPath(); ctx.roundRect(40, imgY, imgW, imgH + 60, 18); ctx.fill();
+                    ctx.beginPath(); ctx.roundRect(rightX, imgY, imgW, imgH + 60, 18); ctx.fill();
+                    if (celebEl) { ctx.save(); ctx.beginPath(); ctx.roundRect(40, imgY, imgW, imgH, 14); ctx.clip(); ctx.drawImage(celebEl, 40, imgY, imgW, imgH); ctx.restore(); }
+                    ctx.fillStyle = '#1A1A1A'; ctx.font = '600 20px Arial';
+                    ctx.fillText(celebData?.name || '', 40 + imgW/2, imgY + imgH + 24);
+                    ctx.fillStyle = 'rgba(0,0,0,0.35)'; ctx.font = '400 16px Arial';
+                    ctx.fillText('이런 무드의 연예인', 40 + imgW/2, imgY + imgH + 46);
+                    if (styleEl) { ctx.save(); ctx.beginPath(); ctx.roundRect(rightX, imgY, imgW, imgH, 14); ctx.clip(); ctx.drawImage(styleEl, rightX, imgY, imgW, imgH); ctx.restore(); }
+                    ctx.fillStyle = '#1A1A1A'; ctx.font = '600 20px Arial';
+                    ctx.fillText(`${main.name} + ${sub.name}`, rightX + imgW/2, imgY + imgH + 24);
+                    ctx.fillStyle = 'rgba(0,0,0,0.35)'; ctx.font = '400 16px Arial';
+                    ctx.fillText('스타일 추천', rightX + imgW/2, imgY + imgH + 46);
+                    const interY = imgY + imgH + 90;
+                    ctx.fillStyle = 'rgba(255,255,255,0.6)';
+                    ctx.beginPath(); ctx.roundRect(40, interY, W - 80, 210, 20); ctx.fill();
+                    ctx.textAlign = 'left';
+                    ctx.fillStyle = '#0F0F0F'; ctx.font = '700 18px Arial';
+                    ctx.fillText('결과 해석', 68, interY + 36);
+                    const desc = resultDetails[comboKey]?.mainMood?.description || '';
+                    const words = desc.split(' ');
+                    let line = '', lineY = interY + 68;
+                    ctx.fillStyle = 'rgba(0,0,0,0.6)'; ctx.font = '400 17px Arial';
+                    for (const word of words) {
+                      const test = line + word + ' ';
+                      if (ctx.measureText(test).width > W - 140 && line !== '') { ctx.fillText(line.trim(), 68, lineY); line = word + ' '; lineY += 26; } else { line = test; }
+                    }
+                    if (line.trim()) ctx.fillText(line.trim(), 68, lineY);
+                    const pts = resultDetails[comboKey]?.mainMood?.points || [];
+                    let ptChipX = 68; const chipY = interY + 158;
+                    ctx.font = '500 15px Arial';
+                    for (const pt of pts) {
+                      const tw = ctx.measureText(pt).width + 24;
+                      ctx.fillStyle = main.chipBg; ctx.beginPath(); ctx.roundRect(ptChipX, chipY - 18, tw, 28, 14); ctx.fill();
+                      ctx.fillStyle = '#333'; ctx.fillText(pt, ptChipX + 12, chipY); ptChipX += tw + 8;
+                    }
+                    ctx.textAlign = 'center';
+                    const tags = hashtagsMap[comboKey] || [];
+                    ctx.fillStyle = 'rgba(0,0,0,0.4)'; ctx.font = '400 19px Arial';
+                    ctx.fillText(tags.join('  '), W/2, interY + 238);
+                    ctx.fillStyle = 'rgba(0,0,0,0.3)'; ctx.font = '500 18px Arial';
+                    ctx.fillText('@bbeume · 추구미 찾기 테스트', W/2, H - 40);
+                    ctx.fillStyle = 'rgba(0,0,0,0.2)'; ctx.font = '400 15px Arial';
+                    ctx.fillText('my-aesthetic-test.vercel.app', W/2, H - 18);
+                    return canvas;
+                  }
+                }}
+                style={{ width: '100%', backgroundColor: 'white', color: '#0F0F0F', fontWeight: '600', padding: '17px', borderRadius: '24px', border: '1.5px solid #ECECEC', cursor: 'pointer', fontSize: '15px', boxShadow: '0 2px 8px rgba(0,0,0,0.04)' }}
+              >
+                결과 저장하기 🖼️
               </button>
             </div>
           </div>
