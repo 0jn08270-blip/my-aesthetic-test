@@ -1023,22 +1023,22 @@ export default function App() {
             {/* SECTION 5: Style Reference Section */}
             {(() => {
               const styleHashtags: Record<string, string[]> = {
-                gg: ['#화이트셔츠', '#크림팬츠', '#미니멀코어', '#로퍼', '#클린핏', '#누드톤'],
-                gy: ['#크림원피스', '#리본헤어', '#발레코어', '#메리제인', '#걸리시룩', '#파스텔톤'],
-                gr: ['#핑크블라우스', '#올드머니', '#골드주얼리', '#뮤트톤', '#페미닌코어', '#힐'],
-                gb: ['#오버핏셔츠', '#와이드데님', '#캡모자', '#스니커즈', '#꾸안꾸', '#캐주얼힙'],
+                gg: ['#화이트셔츠', '#크림팬츠', '#미니멀룩', '#로퍼', '#클린걸', '#누드톤'],
+                gy: ['#미니원피스', '#리본디테일', '#발레코어', '#메리제인', '#걸리시룩', '#파스텔톤'],
+                gr: ['#블라우스', '#캐주얼룩', '#미니멀주얼리', '#뮤트톤', '#페미닌룩', '#운동화'],
+                gb: ['#블라우스', '#와이드팬츠', '#캡모자', '#스니커즈', '#꾸안꾸', '#캐주얼룩'],
                 yg: ['#핑크니트', '#플레어스커트', '#러블리코어', '#발레리나플랫', '#파스텔톤', '#소녀감성'],
-                yy: ['#파스텔원피스', '#리본디테일', '#파스텔코어', '#귀여운백', '#메리제인', '#러블리룩'],
-                yr: ['#코랄원피스', '#로맨틱코어', '#볼드이어링', '#핑크립', '#힐', '#글램큐티'],
-                yb: ['#그래픽티', '#와이드팬츠', '#Y2K코어', '#청키스니커즈', '#데님믹스', '#스트릿큐티'],
-                rg: ['#라인원피스', '#올드머니', '#미니멀주얼', '#뮤트핑크', '#클린글램', '#힐'],
-                ry: ['#새틴원피스', '#리본디테일', '#로맨틱글램', '#볼드이어링', '#핑크톤', '#힐'],
-                rr: ['#비비드컬러', '#볼드액세서리', '#글램코어', '#하이힐', '#강한립', '#맥시멀룩'],
-                rb: ['#가죽재킷', '#와이드팬츠', '#실버액세서리', '#딥컬러', '#힙글램', '#앵클부츠'],
-                bg: ['#베이지셔츠', '#배럴팬츠', '#꾸안꾸', '#로퍼', '#미니멀힙', '#캐주얼코어'],
-                by: ['#크롭티', '#와이드팬츠', '#파스텔백', '#Y2K코어', '#청키스니커즈', '#힙큐티'],
-                br: ['#딥컬러', '#레이어드룩', '#실버액세서리', '#다크코어', '#시크코어', '#앵클부츠'],
-                bb: ['#오버핏아우터', '#빈티지데님', '#스트릿코어', '#볼드벨트', '#빈티지코어', '#청키슈즈'],
+                yy: ['#레이스디테일', '#리본디테일', '#파스텔톤', '#귀여운백', '#메리제인', '#러블리룩'],
+                yr: ['#미니원피스', '#로맨틱룩', '#미니멀주얼리', '#핑크립', '#메리제인', '#딱붙티'],
+                yb: ['#블라우스', '#와이드팬츠', '#Y2K', '#깔끔한단화', '#데님믹스', '#스트릿큐티'],
+                rg: ['#딱붙티', '#캐주얼룩', '#미니멀주얼리', '#뮤트톤', '#클린걸', '#오프숄더'],
+                ry: ['#새틴스커트', '#리본디테일', '#로맨틱룩', '#볼드이어링', '#핑크톤', '#오프숄더'],
+                rr: ['#비비드컬러', '#볼드액세서리', '#딱붙티', '#부츠컷팬츠', '#강한립', '#오프숄더'],
+                rb: ['#가죽재킷', '#와이드팬츠', '#실버액세서리', '#딥컬러', '#딱붙티', '#부츠'],
+                bg: ['#뮤트톤', '#와이드팬츠', '#꾸안꾸', '#로퍼', '#미니멀힙', '#캐주얼룩'],
+                by: ['#크롭티', '#와이드팬츠', '#리본디테일', '#Y2K', '#운동화', '#그래픽티'],
+                br: ['#딥컬러', '#레이어드룩', '#실버액세서리', '#다크한톤', '#시크한무드', '#부츠'],
+                bb: ['#오버핏아우터', '#스포티룩', '#스트릿패션', '#볼드벨트', '#빈티지룩', '#운동화'],
               };
               const tags = styleHashtags[comboKey] || [];
               return (
@@ -1051,20 +1051,36 @@ export default function App() {
                       <div style={{ fontSize: '11px', color: '#B0ADA6', fontWeight: '500', letterSpacing: '0.6px' }}>
                         대표 무드
                       </div>
-                      <div style={{
-                        width: '160px',
-                        height: '213px',
-                        backgroundColor: '#F5F4F1',
-                        border: '1px dashed #D8D6D0',
-                        borderRadius: '16px',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                        fontSize: '12px',
-                        color: '#B0ADA6',
-                      }}>
-                        이미지
-                      </div>
+                      {(() => {
+                        const styleImages: Record<string, { url: string; label: string }> = {
+                          gg: { url: 'https://i.imgur.com/w1CEkvB.png', label: '클린 셔츠룩' },
+                          gy: { url: 'https://i.imgur.com/nhroWDk.jpeg', label: '크림 리본룩' },
+                          gr: { url: 'https://i.imgur.com/qFCOJP5.png', label: '뮤트 핑크 페미닌룩' },
+                          gb: { url: 'https://i.imgur.com/msDSHuL.jpeg', label: '오버핏 데님룩' },
+                          yg: { url: 'https://i.imgur.com/OQSxCCx.png', label: '소프트 니트룩' },
+                          yy: { url: 'https://i.imgur.com/AZNVulQ.jpeg', label: '파스텔 러블리룩' },
+                          yr: { url: 'https://i.imgur.com/buN26XX.jpeg', label: '코랄 슬림룩' },
+                          yb: { url: 'https://i.imgur.com/sjwo58J.png', label: '그래픽 캐주얼룩' },
+                          rg: { url: 'https://i.imgur.com/xAB185P.jpeg', label: '클린 라인룩' },
+                          ry: { url: 'https://i.imgur.com/sRBNPWD.png', label: '핑크 새틴룩' },
+                          rr: { url: 'https://i.imgur.com/64zyuxz.jpeg', label: '비비드 글램룩' },
+                          rb: { url: 'https://i.imgur.com/U2179O8.jpeg', label: '레더 시크룩' },
+                          bg: { url: 'https://i.imgur.com/bbge4a1.jpeg', label: '베이지 배럴룩' },
+                          by: { url: 'https://i.imgur.com/xB3zuvJ.jpeg', label: '크롭 Y2K룩' },
+                          br: { url: 'https://i.imgur.com/fEA1Qpn.jpeg', label: '딥컬러 레이어드룩' },
+                          bb: { url: 'https://i.imgur.com/7XuAhmn.png', label: '빈티지 오버핏룩' },
+                        };
+                        const styleImg = styleImages[comboKey];
+                        return styleImg ? (
+                          <div style={{ width: '160px', height: '213px', borderRadius: '16px', overflow: 'hidden' }}>
+                            <img src={styleImg.url} alt={styleImg.label} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }} />
+                          </div>
+                        ) : (
+                          <div style={{ width: '160px', height: '213px', backgroundColor: '#F5F4F1', border: '1px dashed #D8D6D0', borderRadius: '16px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '12px', color: '#B0ADA6' }}>
+                            이미지
+                          </div>
+                        );
+                      })()}
                       <div style={{ fontSize: '14px', fontWeight: '700', color: '#1A1A1A' }}>
                         {main.name} + {sub.name}
                       </div>
@@ -1092,97 +1108,8 @@ export default function App() {
               );
             })()}
 
-            {/* SECTION 6: Shopping Mall Recommendation Section */}
-            <div style={{ marginTop: '8px' }}>
-              <div style={{ fontSize: '17px', fontWeight: '700', color: '#0F0F0F', marginBottom: '14px' }}>
-                쇼핑몰 추천
-              </div>
-              <div style={{ display: 'flex', gap: '10px', overflowX: 'auto' }}>
-                <div style={{ backgroundColor: 'white', border: '1px solid #ECECEC', borderRadius: '18px', padding: '20px', boxShadow: '0 2px 8px rgba(0,0,0,0.04)', minWidth: '240px', width: '240px' }}>
-                  <div style={{ fontSize: '14px', fontWeight: '700', color: '#0F0F0F', marginBottom: '7px' }}>
-                    쇼핑몰 A
-                  </div>
-                  <div style={{ fontSize: '12px', color: '#666', lineHeight: '1.6', marginBottom: '10px' }}>
-                    청순하고 러블리한 무드의 아이템이 잘 모여 있어요
-                  </div>
-                  <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
-                    {['청순', '러블리', '데일리'].map((tag) => (
-                      <span
-                        key={tag}
-                        style={{
-                          padding: '5px 11px',
-                          backgroundColor: '#F7F7F7',
-                          border: '1px solid #EFEFEF',
-                          borderRadius: '14px',
-                          fontSize: '11px',
-                          color: '#666',
-                          fontWeight: '500',
-                        }}
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <div style={{ backgroundColor: 'white', border: '1px solid #ECECEC', borderRadius: '18px', padding: '20px', boxShadow: '0 2px 8px rgba(0,0,0,0.04)', minWidth: '240px', width: '240px' }}>
-                  <div style={{ fontSize: '14px', fontWeight: '700', color: '#0F0F0F', marginBottom: '7px' }}>
-                    쇼핑몰 B
-                  </div>
-                  <div style={{ fontSize: '12px', color: '#666', lineHeight: '1.6', marginBottom: '10px' }}>
-                    트렌디하고 감각적인 포인트 아이템을 찾기 좋아요
-                  </div>
-                  <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
-                    {['트렌디', '캐주얼', '포인트'].map((tag) => (
-                      <span
-                        key={tag}
-                        style={{
-                          padding: '5px 11px',
-                          backgroundColor: '#F7F7F7',
-                          border: '1px solid #EFEFEF',
-                          borderRadius: '14px',
-                          fontSize: '11px',
-                          color: '#666',
-                          fontWeight: '500',
-                        }}
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-
-                <div style={{ backgroundColor: 'white', border: '1px solid #ECECEC', borderRadius: '18px', padding: '20px', boxShadow: '0 2px 8px rgba(0,0,0,0.04)', minWidth: '240px', width: '240px' }}>
-                  <div style={{ fontSize: '14px', fontWeight: '700', color: '#0F0F0F', marginBottom: '7px' }}>
-                    쇼핑몰 C
-                  </div>
-                  <div style={{ fontSize: '12px', color: '#666', lineHeight: '1.6', marginBottom: '10px' }}>
-                    깔끔한 기본템과 여성스러운 무드를 함께 보기 좋아요
-                  </div>
-                  <div style={{ display: 'flex', gap: '6px', flexWrap: 'wrap' }}>
-                    {['미니멀', '페미닌', '데일리'].map((tag) => (
-                      <span
-                        key={tag}
-                        style={{
-                          padding: '5px 11px',
-                          backgroundColor: '#F7F7F7',
-                          border: '1px solid #EFEFEF',
-                          borderRadius: '14px',
-                          fontSize: '11px',
-                          color: '#666',
-                          fontWeight: '500',
-                        }}
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-
             {/* SECTION 7: Bottom CTA */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginTop: '16px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginTop: '24px' }}>
               <button
                 onClick={() => {
                   setAnswers([]);
